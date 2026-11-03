@@ -1,0 +1,36 @@
+{
+  "hold_out_college": {
+    "n_train_human": 233,
+    "n_train_machine": 145,
+    "cv_auroc_in_domain": 0.9975728873760544,
+    "fpr_heldout_native": 0.0,
+    "fpr_toefl": 0.04395604395604396,
+    "toefl_flagged_after_polishing": 0.24175824175824176,
+    "toefl_mean_score_change_sd": 1.5634725756146954,
+    "toefl_share_score_up": 0.9560439560439561,
+    "auroc_heldout": 0.6921658986175115,
+    "tpr_heldout_machine": 0.03225806451612903
+  },
+  "hold_out_cs224n": {
+    "n_train_human": 158,
+    "n_train_machine": 31,
+    "cv_auroc_in_domain": 0.9844834626378114,
+    "fpr_heldout_native": 0.0,
+    "fpr_toefl": 0.6263736263736264,
+    "toefl_flagged_after_polishing": 0.8241758241758241,
+    "toefl_mean_score_change_sd": 0.5982425462340948,
+    "toefl_share_score_up": 0.8461538461538461,
+    "auroc_heldout": 0.9639001189060642,
+    "tpr_heldout_machine": 0.09655172413793103
+  },
+  "hold_out_hewlett": {
+    "n_train_human": 215,
+    "n_train_machine": 176,
+    "cv_auroc_in_domain": 0.9927589852008456,
+    "fpr_heldout_native": 0.6363636363636364,
+    "fpr_toefl": 0.7912087912087912,
+    "toefl_flagged_after_polishing": 0.9340659340659341,
+    "toefl_mean_score_change_sd": 0.8203931325332599,
+    "toefl_share_score_up": 0.8461538461538461
+  }
+}

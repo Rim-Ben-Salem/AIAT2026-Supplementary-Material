@@ -1,0 +1,12 @@
+# versions used for the reported results
+numpy==2.5.3
+pandas==3.0.5
+scipy==1.18.1
+scikit-learn==1.9.1
+# optional: word frequencies without --freq-list
+# wordfreq
+# optional: --lm-model and --rewriter hf
+# torch
+# transformers
+# optional: --rewriter api
+# openai

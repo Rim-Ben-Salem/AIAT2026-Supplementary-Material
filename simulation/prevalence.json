@@ -1,0 +1,586 @@
+{
+  "default": {
+    "misspecified": {
+      "pi=0.02,pi_hat=0.02": {
+        "rounds_deployed": 1.1,
+        "oracle_rounds": 1.1,
+        "excess_rounds": 0.0,
+        "premature_rounds": 0.1,
+        "extra_flags_g2": 0.0,
+        "extra_flags_g1": 0.0,
+        "min_true_ppv_in_use": 0.5644734383332092,
+        "bound_min_true_ppv": 0.5
+      },
+      "pi=0.02,pi_hat=0.05": {
+        "rounds_deployed": 4.15,
+        "oracle_rounds": 1.1,
+        "excess_rounds": 2.95,
+        "premature_rounds": 0.0,
+        "extra_flags_g2": 0.10675000000000001,
+        "extra_flags_g1": 0.01534375,
+        "min_true_ppv_in_use": 0.3454433869347443,
+        "bound_min_true_ppv": 0.2794117647058823
+      },
+      "pi=0.02,pi_hat=0.1": {
+        "rounds_deployed": 8.6,
+        "oracle_rounds": 1.1,
+        "excess_rounds": 7.4,
+        "premature_rounds": 0.0,
+        "extra_flags_g2": 0.206875,
+        "extra_flags_g1": 0.04953125,
+        "min_true_ppv_in_use": 0.18102647391794807,
+        "bound_min_true_ppv": 0.15517241379310345
+      },
+      "pi=0.02,pi_hat=0.2": {
+        "rounds_deployed": 17.7,
+        "oracle_rounds": 1.1,
+        "excess_rounds": 16.5,
+        "premature_rounds": 0.0,
+        "extra_flags_g2": 0.3365,
+        "extra_flags_g1": 0.13612500000000002,
+        "min_true_ppv_in_use": 0.0851829711513653,
+        "bound_min_true_ppv": 0.07547169811320754
+      },
+      "pi=0.02,pi_hat=0.3": {
+        "rounds_deployed": 38.5,
+        "oracle_rounds": 1.1,
+        "excess_rounds": 37.3,
+        "premature_rounds": 0.0,
+        "extra_flags_g2": 0.561,
+        "extra_flags_g1": 0.35037500000000005,
+        "min_true_ppv_in_use": 0.052011169018466905,
+        "bound_min_true_ppv": 0.04545454545454545
+      },
+      "pi=0.05,pi_hat=0.02": {
+        "rounds_deployed": 1.1,
+        "oracle_rounds": 4.15,
+        "excess_rounds": 0.0,
+        "premature_rounds": 3.6,
+        "extra_flags_g2": -0.10675000000000001,
+        "extra_flags_g1": -0.01534375,
+        "min_true_ppv_in_use": 0.7676364022749612,
+        "bound_min_true_ppv": 0.7205882352941176
+      },
+      "pi=0.05,pi_hat=0.05": {
+        "rounds_deployed": 4.15,
+        "oracle_rounds": 4.15,
+        "excess_rounds": 0.0,
+        "premature_rounds": 0.55,
+        "extra_flags_g2": 0.0,
+        "extra_flags_g1": 0.0,
+        "min_true_ppv_in_use": 0.5734931943998646,
+        "bound_min_true_ppv": 0.5
+      },
+      "pi=0.05,pi_hat=0.1": {
+        "rounds_deployed": 8.6,
+        "oracle_rounds": 4.15,
+        "excess_rounds": 3.9,
+        "premature_rounds": 0.0,
+        "extra_flags_g2": 0.10012500000000002,
+        "extra_flags_g1": 0.0341875,
+        "min_true_ppv_in_use": 0.3617415713391795,
+        "bound_min_true_ppv": 0.32142857142857145
+      },
+      "pi=0.05,pi_hat=0.2": {
+        "rounds_deployed": 17.7,
+        "oracle_rounds": 4.15,
+        "excess_rounds": 13.0,
+        "premature_rounds": 0.0,
+        "extra_flags_g2": 0.22975000000000004,
+        "extra_flags_g1": 0.12078125000000002,
+        "min_true_ppv_in_use": 0.19343288618875132,
+        "bound_min_true_ppv": 0.1739130434782609
+      },
+      "pi=0.05,pi_hat=0.3": {
+        "rounds_deployed": 38.5,
+        "oracle_rounds": 4.15,
+        "excess_rounds": 33.8,
+        "premature_rounds": 0.0,
+        "extra_flags_g2": 0.45424999999999993,
+        "extra_flags_g1": 0.33503125,
+        "min_true_ppv_in_use": 0.12380701523244167,
+        "bound_min_true_ppv": 0.109375
+      },
+      "pi=0.1,pi_hat=0.02": {
+        "rounds_deployed": 1.1,
+        "oracle_rounds": 8.6,
+        "excess_rounds": 0.0,
+        "premature_rounds": 8.95,
+        "extra_flags_g2": -0.206875,
+        "extra_flags_g1": -0.04953125,
+        "min_true_ppv_in_use": 0.873975592414592,
+        "bound_min_true_ppv": 0.8448275862068966
+      },
+      "pi=0.1,pi_hat=0.05": {
+        "rounds_deployed": 4.15,
+        "oracle_rounds": 8.6,
+        "excess_rounds": 0.0,
+        "premature_rounds": 5.9,
+        "extra_flags_g2": -0.10012500000000002,
+        "extra_flags_g1": -0.0341875,
+        "min_true_ppv_in_use": 0.7379653828900068,
+        "bound_min_true_ppv": 0.6785714285714285
+      },
+      "pi=0.1,pi_hat=0.1": {
+        "rounds_deployed": 8.6,
+        "oracle_rounds": 8.6,
+        "excess_rounds": 0.0,
+        "premature_rounds": 1.45,
+        "extra_flags_g2": 0.0,
+        "extra_flags_g1": 0.0,
+        "min_true_ppv_in_use": 0.5434187455762822,
+        "bound_min_true_ppv": 0.5
+      },
+      "pi=0.1,pi_hat=0.2": {
+        "rounds_deployed": 17.7,
+        "oracle_rounds": 8.6,
+        "excess_rounds": 7.8,
+        "premature_rounds": 0.15,
+        "extra_flags_g2": 0.12962500000000005,
+        "extra_flags_g1": 0.08659375,
+        "min_true_ppv_in_use": 0.3357368099202074,
+        "bound_min_true_ppv": 0.30769230769230776
+      },
+      "pi=0.1,pi_hat=0.3": {
+        "rounds_deployed": 38.5,
+        "oracle_rounds": 8.6,
+        "excess_rounds": 28.55,
+        "premature_rounds": 0.1,
+        "extra_flags_g2": 0.35412499999999997,
+        "extra_flags_g1": 0.30084374999999997,
+        "min_true_ppv_in_use": 0.22942360757059496,
+        "bound_min_true_ppv": 0.20588235294117643
+      },
+      "pi=0.2,pi_hat=0.02": {
+        "rounds_deployed": 1.1,
+        "oracle_rounds": 17.7,
+        "excess_rounds": 0.0,
+        "premature_rounds": 33.25,
+        "extra_flags_g2": -0.3365,
+        "extra_flags_g1": -0.13612500000000002,
+        "min_true_ppv_in_use": 0.9395832953791441,
+        "bound_min_true_ppv": 0.9245283018867924
+      },
+      "pi=0.2,pi_hat=0.05": {
+        "rounds_deployed": 4.15,
+        "oracle_rounds": 17.7,
+        "excess_rounds": 0.0,
+        "premature_rounds": 30.2,
+        "extra_flags_g2": -0.22975000000000004,
+        "extra_flags_g1": -0.12078125000000002,
+        "min_true_ppv_in_use": 0.8630352925141166,
+        "bound_min_true_ppv": 0.8260869565217391
+      },
+      "pi=0.2,pi_hat=0.1": {
+        "rounds_deployed": 8.6,
+        "oracle_rounds": 17.7,
+        "excess_rounds": 0.0,
+        "premature_rounds": 25.75,
+        "extra_flags_g2": -0.12962500000000005,
+        "extra_flags_g1": -0.08659375,
+        "min_true_ppv_in_use": 0.7271394092265986,
+        "bound_min_true_ppv": 0.6923076923076924
+      },
+      "pi=0.2,pi_hat=0.2": {
+        "rounds_deployed": 17.7,
+        "oracle_rounds": 17.7,
+        "excess_rounds": 0.0,
+        "premature_rounds": 16.65,
+        "extra_flags_g2": 0.0,
+        "extra_flags_g1": 0.0,
+        "min_true_ppv_in_use": 0.5315250155391207,
+        "bound_min_true_ppv": 0.5
+      },
+      "pi=0.2,pi_hat=0.3": {
+        "rounds_deployed": 38.5,
+        "oracle_rounds": 17.7,
+        "excess_rounds": 11.9,
+        "premature_rounds": 7.75,
+        "extra_flags_g2": 0.22449999999999992,
+        "extra_flags_g1": 0.21425000000000005,
+        "min_true_ppv_in_use": 0.400455986538232,
+        "bound_min_true_ppv": 0.3684210526315789
+      },
+      "pi=0.3,pi_hat=0.02": {
+        "rounds_deployed": 1.1,
+        "oracle_rounds": 38.5,
+        "excess_rounds": 0.0,
+        "premature_rounds": 57.45,
+        "extra_flags_g2": -0.561,
+        "extra_flags_g1": -0.35037500000000005,
+        "min_true_ppv_in_use": 0.9638048339235425,
+        "bound_min_true_ppv": 0.9545454545454545
+      },
+      "pi=0.3,pi_hat=0.05": {
+        "rounds_deployed": 4.15,
+        "oracle_rounds": 38.5,
+        "excess_rounds": 0.0,
+        "premature_rounds": 54.4,
+        "extra_flags_g2": -0.45424999999999993,
+        "extra_flags_g1": -0.33503125,
+        "min_true_ppv_in_use": 0.9150939541083769,
+        "bound_min_true_ppv": 0.8906250000000001
+      },
+      "pi=0.3,pi_hat=0.1": {
+        "rounds_deployed": 8.6,
+        "oracle_rounds": 38.5,
+        "excess_rounds": 0.0,
+        "premature_rounds": 49.95,
+        "extra_flags_g2": -0.35412499999999997,
+        "extra_flags_g1": -0.30084374999999997,
+        "min_true_ppv_in_use": 0.8200722688226258,
+        "bound_min_true_ppv": 0.7941176470588235
+      },
+      "pi=0.3,pi_hat=0.2": {
+        "rounds_deployed": 17.7,
+        "oracle_rounds": 38.5,
+        "excess_rounds": 0.0,
+        "premature_rounds": 40.85,
+        "extra_flags_g2": -0.22449999999999992,
+        "extra_flags_g1": -0.21425000000000005,
+        "min_true_ppv_in_use": 0.660107094536027,
+        "bound_min_true_ppv": 0.631578947368421
+      },
+      "pi=0.3,pi_hat=0.3": {
+        "rounds_deployed": 38.5,
+        "oracle_rounds": 38.5,
+        "excess_rounds": 0.0,
+        "premature_rounds": 20.05,
+        "extra_flags_g2": 0.0,
+        "extra_flags_g1": 0.0,
+        "min_true_ppv_in_use": 0.533275617052041,
+        "bound_min_true_ppv": 0.5
+      }
+    },
+    "estimated": {
+      "pi=0.05,point": {
+        "rounds_deployed": 3.1,
+        "oracle_rounds": 4.15,
+        "excess_rounds": 0.35,
+        "extra_flags_g2": -0.033875
+      },
+      "pi=0.05,lower5": {
+        "rounds_deployed": 1.25,
+        "oracle_rounds": 4.15,
+        "excess_rounds": 0.0,
+        "extra_flags_g2": -0.097125
+      },
+      "pi=0.1,point": {
+        "rounds_deployed": 6.0,
+        "oracle_rounds": 8.6,
+        "excess_rounds": 0.1,
+        "extra_flags_g2": -0.052625
+      },
+      "pi=0.1,lower5": {
+        "rounds_deployed": 2.65,
+        "oracle_rounds": 8.6,
+        "excess_rounds": 0.0,
+        "extra_flags_g2": -0.144125
+      },
+      "pi=0.2,point": {
+        "rounds_deployed": 8.95,
+        "oracle_rounds": 17.7,
+        "excess_rounds": 0.0,
+        "extra_flags_g2": -0.12125000000000001
+      },
+      "pi=0.2,lower5": {
+        "rounds_deployed": 5.6,
+        "oracle_rounds": 17.7,
+        "excess_rounds": 0.0,
+        "extra_flags_g2": -0.19325
+      }
+    }
+  },
+  "anchored_r0.5": {
+    "misspecified": {
+      "pi=0.02,pi_hat=0.02": {
+        "rounds_deployed": 1.0,
+        "oracle_rounds": 1.0,
+        "excess_rounds": 0.0,
+        "premature_rounds": 0.0,
+        "extra_flags_g2": 0.0,
+        "extra_flags_g1": 0.0,
+        "min_true_ppv_in_use": 0.6174250906402439,
+        "bound_min_true_ppv": 0.5
+      },
+      "pi=0.02,pi_hat=0.05": {
+        "rounds_deployed": 1.05,
+        "oracle_rounds": 1.0,
+        "excess_rounds": 0.05,
+        "premature_rounds": 0.0,
+        "extra_flags_g2": 0.001125,
+        "extra_flags_g1": 0.0,
+        "min_true_ppv_in_use": 0.5997326349122548,
+        "bound_min_true_ppv": 0.2794117647058823
+      },
+      "pi=0.02,pi_hat=0.1": {
+        "rounds_deployed": 1.55,
+        "oracle_rounds": 1.0,
+        "excess_rounds": 0.55,
+        "premature_rounds": 0.0,
+        "extra_flags_g2": 0.022,
+        "extra_flags_g1": 0.00021874999999999998,
+        "min_true_ppv_in_use": 0.39134750820095265,
+        "bound_min_true_ppv": 0.15517241379310345
+      },
+      "pi=0.02,pi_hat=0.2": {
+        "rounds_deployed": 3.55,
+        "oracle_rounds": 1.0,
+        "excess_rounds": 2.55,
+        "premature_rounds": 0.0,
+        "extra_flags_g2": 0.124125,
+        "extra_flags_g1": 0.0013437500000000003,
+        "min_true_ppv_in_use": 0.10736626046449334,
+        "bound_min_true_ppv": 0.07547169811320754
+      },
+      "pi=0.02,pi_hat=0.3": {
+        "rounds_deployed": 7.65,
+        "oracle_rounds": 1.0,
+        "excess_rounds": 6.65,
+        "premature_rounds": 0.0,
+        "extra_flags_g2": 0.3315,
+        "extra_flags_g1": 0.00653125,
+        "min_true_ppv_in_use": 0.057187843258779056,
+        "bound_min_true_ppv": 0.04545454545454545
+      },
+      "pi=0.05,pi_hat=0.02": {
+        "rounds_deployed": 1.0,
+        "oracle_rounds": 1.05,
+        "excess_rounds": 0.0,
+        "premature_rounds": 0.05,
+        "extra_flags_g2": -0.001125,
+        "extra_flags_g1": 0.0,
+        "min_true_ppv_in_use": 0.8046110705020706,
+        "bound_min_true_ppv": 0.7205882352941176
+      },
+      "pi=0.05,pi_hat=0.05": {
+        "rounds_deployed": 1.05,
+        "oracle_rounds": 1.05,
+        "excess_rounds": 0.0,
+        "premature_rounds": 0.0,
+        "extra_flags_g2": 0.0,
+        "extra_flags_g1": 0.0,
+        "min_true_ppv_in_use": 0.7897387012922392,
+        "bound_min_true_ppv": 0.5
+      },
+      "pi=0.05,pi_hat=0.1": {
+        "rounds_deployed": 1.55,
+        "oracle_rounds": 1.05,
+        "excess_rounds": 0.5,
+        "premature_rounds": 0.0,
+        "extra_flags_g2": 0.020874999999999998,
+        "extra_flags_g1": 0.00021874999999999998,
+        "min_true_ppv_in_use": 0.5805413344287136,
+        "bound_min_true_ppv": 0.32142857142857145
+      },
+      "pi=0.05,pi_hat=0.2": {
+        "rounds_deployed": 3.55,
+        "oracle_rounds": 1.05,
+        "excess_rounds": 2.5,
+        "premature_rounds": 0.0,
+        "extra_flags_g2": 0.12299999999999997,
+        "extra_flags_g1": 0.0013437500000000003,
+        "min_true_ppv_in_use": 0.23483728158403086,
+        "bound_min_true_ppv": 0.1739130434782609
+      },
+      "pi=0.05,pi_hat=0.3": {
+        "rounds_deployed": 7.65,
+        "oracle_rounds": 1.05,
+        "excess_rounds": 6.6,
+        "premature_rounds": 0.0,
+        "extra_flags_g2": 0.330375,
+        "extra_flags_g1": 0.00653125,
+        "min_true_ppv_in_use": 0.1350099138414144,
+        "bound_min_true_ppv": 0.109375
+      },
+      "pi=0.1,pi_hat=0.02": {
+        "rounds_deployed": 1.0,
+        "oracle_rounds": 1.55,
+        "excess_rounds": 0.0,
+        "premature_rounds": 0.65,
+        "extra_flags_g2": -0.022,
+        "extra_flags_g1": -0.00021874999999999998,
+        "min_true_ppv_in_use": 0.8963616100922408,
+        "bound_min_true_ppv": 0.8448275862068966
+      },
+      "pi=0.1,pi_hat=0.05": {
+        "rounds_deployed": 1.05,
+        "oracle_rounds": 1.55,
+        "excess_rounds": 0.0,
+        "premature_rounds": 0.6,
+        "extra_flags_g2": -0.020874999999999998,
+        "extra_flags_g1": -0.00021874999999999998,
+        "min_true_ppv_in_use": 0.8862008964324559,
+        "bound_min_true_ppv": 0.6785714285714285
+      },
+      "pi=0.1,pi_hat=0.1": {
+        "rounds_deployed": 1.55,
+        "oracle_rounds": 1.55,
+        "excess_rounds": 0.0,
+        "premature_rounds": 0.1,
+        "extra_flags_g2": 0.0,
+        "extra_flags_g1": 0.0,
+        "min_true_ppv_in_use": 0.7200326067974328,
+        "bound_min_true_ppv": 0.5
+      },
+      "pi=0.1,pi_hat=0.2": {
+        "rounds_deployed": 3.55,
+        "oracle_rounds": 1.55,
+        "excess_rounds": 1.9,
+        "premature_rounds": 0.0,
+        "extra_flags_g2": 0.102125,
+        "extra_flags_g1": 0.0011250000000000001,
+        "min_true_ppv_in_use": 0.3902920422016112,
+        "bound_min_true_ppv": 0.30769230769230776
+      },
+      "pi=0.1,pi_hat=0.3": {
+        "rounds_deployed": 7.65,
+        "oracle_rounds": 1.55,
+        "excess_rounds": 6.0,
+        "premature_rounds": 0.0,
+        "extra_flags_g2": 0.3095,
+        "extra_flags_g1": 0.006312499999999999,
+        "min_true_ppv_in_use": 0.24724942834809321,
+        "bound_min_true_ppv": 0.20588235294117643
+      },
+      "pi=0.2,pi_hat=0.02": {
+        "rounds_deployed": 1.0,
+        "oracle_rounds": 3.55,
+        "excess_rounds": 0.0,
+        "premature_rounds": 4.05,
+        "extra_flags_g2": -0.124125,
+        "extra_flags_g1": -0.0013437500000000003,
+        "min_true_ppv_in_use": 0.9509829109727266,
+        "bound_min_true_ppv": 0.9245283018867924
+      },
+      "pi=0.2,pi_hat=0.05": {
+        "rounds_deployed": 1.05,
+        "oracle_rounds": 3.55,
+        "excess_rounds": 0.0,
+        "premature_rounds": 4.0,
+        "extra_flags_g2": -0.12299999999999997,
+        "extra_flags_g1": -0.0013437500000000003,
+        "min_true_ppv_in_use": 0.9453464996094878,
+        "bound_min_true_ppv": 0.8260869565217391
+      },
+      "pi=0.2,pi_hat=0.1": {
+        "rounds_deployed": 1.55,
+        "oracle_rounds": 3.55,
+        "excess_rounds": 0.0,
+        "premature_rounds": 3.5,
+        "extra_flags_g2": -0.102125,
+        "extra_flags_g1": -0.0011250000000000001,
+        "min_true_ppv_in_use": 0.840026239623124,
+        "bound_min_true_ppv": 0.6923076923076924
+      },
+      "pi=0.2,pi_hat=0.2": {
+        "rounds_deployed": 3.55,
+        "oracle_rounds": 3.55,
+        "excess_rounds": 0.0,
+        "premature_rounds": 1.5,
+        "extra_flags_g2": 0.0,
+        "extra_flags_g1": 0.0,
+        "min_true_ppv_in_use": 0.5867969309626081,
+        "bound_min_true_ppv": 0.5
+      },
+      "pi=0.2,pi_hat=0.3": {
+        "rounds_deployed": 7.65,
+        "oracle_rounds": 3.55,
+        "excess_rounds": 3.1,
+        "premature_rounds": 0.5,
+        "extra_flags_g2": 0.207375,
+        "extra_flags_g1": 0.005187499999999999,
+        "min_true_ppv_in_use": 0.4237649514657284,
+        "bound_min_true_ppv": 0.3684210526315789
+      },
+      "pi=0.3,pi_hat=0.02": {
+        "rounds_deployed": 1.0,
+        "oracle_rounds": 7.65,
+        "excess_rounds": 0.0,
+        "premature_rounds": 9.2,
+        "extra_flags_g2": -0.3315,
+        "extra_flags_g1": -0.00653125,
+        "min_true_ppv_in_use": 0.9707794350551726,
+        "bound_min_true_ppv": 0.9545454545454545
+      },
+      "pi=0.3,pi_hat=0.05": {
+        "rounds_deployed": 1.05,
+        "oracle_rounds": 7.65,
+        "excess_rounds": 0.0,
+        "premature_rounds": 9.15,
+        "extra_flags_g2": -0.330375,
+        "extra_flags_g1": -0.00653125,
+        "min_true_ppv_in_use": 0.967211134175726,
+        "bound_min_true_ppv": 0.8906250000000001
+      },
+      "pi=0.3,pi_hat=0.1": {
+        "rounds_deployed": 1.55,
+        "oracle_rounds": 7.65,
+        "excess_rounds": 0.0,
+        "premature_rounds": 8.65,
+        "extra_flags_g2": -0.3095,
+        "extra_flags_g1": -0.006312499999999999,
+        "min_true_ppv_in_use": 0.8962904017877344,
+        "bound_min_true_ppv": 0.7941176470588235
+      },
+      "pi=0.3,pi_hat=0.2": {
+        "rounds_deployed": 3.55,
+        "oracle_rounds": 7.65,
+        "excess_rounds": 0.0,
+        "premature_rounds": 6.65,
+        "extra_flags_g2": -0.207375,
+        "extra_flags_g1": -0.005187499999999999,
+        "min_true_ppv_in_use": 0.7071677299430278,
+        "bound_min_true_ppv": 0.631578947368421
+      },
+      "pi=0.3,pi_hat=0.3": {
+        "rounds_deployed": 7.65,
+        "oracle_rounds": 7.65,
+        "excess_rounds": 0.0,
+        "premature_rounds": 2.55,
+        "extra_flags_g2": 0.0,
+        "extra_flags_g1": 0.0,
+        "min_true_ppv_in_use": 0.5567557459010318,
+        "bound_min_true_ppv": 0.5
+      }
+    },
+    "estimated": {
+      "pi=0.05,point": {
+        "rounds_deployed": 2.05,
+        "oracle_rounds": 1.05,
+        "excess_rounds": 1.05,
+        "extra_flags_g2": 0.05637500000000001
+      },
+      "pi=0.05,lower5": {
+        "rounds_deployed": 1.05,
+        "oracle_rounds": 1.05,
+        "excess_rounds": 0.05,
+        "extra_flags_g2": -0.0001249999999999994
+      },
+      "pi=0.1,point": {
+        "rounds_deployed": 1.85,
+        "oracle_rounds": 1.55,
+        "excess_rounds": 0.55,
+        "extra_flags_g2": 0.019499999999999997
+      },
+      "pi=0.1,lower5": {
+        "rounds_deployed": 1.25,
+        "oracle_rounds": 1.55,
+        "excess_rounds": 0.15,
+        "extra_flags_g2": -0.010125000000000002
+      },
+      "pi=0.2,point": {
+        "rounds_deployed": 2.5,
+        "oracle_rounds": 3.55,
+        "excess_rounds": 0.2,
+        "extra_flags_g2": -0.04725
+      },
+      "pi=0.2,lower5": {
+        "rounds_deployed": 1.3,
+        "oracle_rounds": 3.55,
+        "excess_rounds": 0.0,
+        "extra_flags_g2": -0.111625
+      }
+    }
+  }
+}

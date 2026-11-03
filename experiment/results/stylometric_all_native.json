@@ -1,0 +1,189 @@
+{
+  "config": {
+    "liang_root": "ChatGPT-Detector-Bias",
+    "csv": null,
+    "native": "hewlett,college,cs224n",
+    "freq_list": "FrequencyWords/content/2018/en/en_50k.txt",
+    "lm_model": null,
+    "rewriter": "published",
+    "rewrite_model": null,
+    "api_base": null,
+    "rounds": 1,
+    "target_fpr": 0.1,
+    "response_rate": 1.0,
+    "no_evasion": false,
+    "splits": 200,
+    "seed": 0,
+    "out": "results/stylometric_all_native.json"
+  },
+  "features": [
+    "mean_zipf",
+    "sd_zipf",
+    "frac_rare",
+    "frac_very_common",
+    "mattr",
+    "mean_word_len",
+    "sd_word_len",
+    "frac_long_words",
+    "mean_sent_len",
+    "sd_sent_len",
+    "commas_per_word",
+    "semicolons_colons_per_word",
+    "function_word_ratio",
+    "first_person_rate",
+    "contraction_rate"
+  ],
+  "interval_note": "lo and hi are the 2.5th and 97.5th percentiles across random splits: split-variability intervals, not confidence intervals",
+  "corpus": {
+    "ai": 176,
+    "native": 303,
+    "nonnative": 91
+  },
+  "rounds": [
+    {
+      "round": 0,
+      "heldout": {
+        "auroc": {
+          "mean": 0.9785927456382001,
+          "lo": 0.9568353994490358,
+          "hi": 0.9947199265381084
+        },
+        "tpr": {
+          "mean": 0.9289772727272728,
+          "lo": 0.8630681818181818,
+          "hi": 1.0
+        },
+        "fpr": {
+          "mean": 0.10409090909090908,
+          "lo": 0.04040404040404041,
+          "hi": 0.21212121212121213
+        },
+        "fpr_native": {
+          "mean": 0.07789473684210525,
+          "lo": 0.013157894736842105,
+          "hi": 0.1713815789473685
+        },
+        "fpr_nonnative": {
+          "mean": 0.19065217391304345,
+          "lo": 0.043478260869565216,
+          "hi": 0.3500000000000005
+        },
+        "auroc_native": {
+          "mean": 0.9829321172248803,
+          "lo": 0.9605188397129186,
+          "hi": 0.9976076555023924
+        },
+        "auroc_nonnative": {
+          "mean": 0.96425395256917,
+          "lo": 0.9258893280632411,
+          "hi": 0.9911314229249012
+        }
+      },
+      "drift_from_round0": {
+        "ai": 0.0,
+        "native": 0.0,
+        "nonnative": 0.0
+      },
+      "deployed_threshold": -1.1942847547190198,
+      "deployed_pooled_human_fpr": 0.10152284263959391,
+      "deployed": {
+        "tpr": 0.9147727272727273,
+        "fpr": 0.10152284263959391,
+        "fpr_native": 0.07590759075907591,
+        "fpr_nonnative": 0.18681318681318682
+      },
+      "flagged": {
+        "ai": {
+          "flagged": 161,
+          "selected": 161,
+          "rewritten": 161
+        },
+        "native": {
+          "flagged": 23,
+          "selected": 23,
+          "rewritten": 0
+        },
+        "nonnative": {
+          "flagged": 17,
+          "selected": 17,
+          "rewritten": 17
+        }
+      },
+      "movement": {
+        "ai": {
+          "n": 161,
+          "mean_delta_projection": 0.2200403628808112,
+          "mean_distance": 2.316610343169615,
+          "mean_delta_score": 0.8839816483181397,
+          "share_still_flagged": 0.9875776397515528
+        },
+        "nonnative": {
+          "n": 17,
+          "mean_delta_projection": 0.7894883410576806,
+          "mean_distance": 4.471089581279509,
+          "mean_delta_score": 3.167815165188679,
+          "share_still_flagged": 0.9411764705882353
+        }
+      }
+    },
+    {
+      "round": 1,
+      "heldout": {
+        "auroc": {
+          "mean": 0.9713601928374654,
+          "lo": 0.9444157483930212,
+          "hi": 0.9924242424242424
+        },
+        "tpr": {
+          "mean": 0.9282954545454545,
+          "lo": 0.8409090909090909,
+          "hi": 1.0
+        },
+        "fpr": {
+          "mean": 0.10717171717171717,
+          "lo": 0.04015151515151516,
+          "hi": 0.20202020202020202
+        },
+        "fpr_native": {
+          "mean": 0.08131578947368422,
+          "lo": 0.013157894736842105,
+          "hi": 0.18421052631578946
+        },
+        "fpr_nonnative": {
+          "mean": 0.1926086956521739,
+          "lo": 0.043478260869565216,
+          "hi": 0.34782608695652173
+        },
+        "auroc_native": {
+          "mean": 0.9782790071770334,
+          "lo": 0.9508747009569378,
+          "hi": 0.9970170454545455
+        },
+        "auroc_nonnative": {
+          "mean": 0.948498023715415,
+          "lo": 0.8892786561264822,
+          "hi": 0.9891304347826086
+        }
+      },
+      "drift_from_round0": {
+        "ai": 1.289821638364224,
+        "native": 0.0,
+        "nonnative": 0.7299512544732931
+      },
+      "previous_detector_frozen": {
+        "tpr": 0.9034090909090909,
+        "fpr": 0.09898477157360407,
+        "fpr_native": 0.07590759075907591,
+        "fpr_nonnative": 0.17582417582417584
+      },
+      "deployed_threshold": -1.3672391417269998,
+      "deployed_pooled_human_fpr": 0.10152284263959391,
+      "deployed": {
+        "tpr": 0.9204545454545454,
+        "fpr": 0.10152284263959391,
+        "fpr_native": 0.06930693069306931,
+        "fpr_nonnative": 0.2087912087912088
+      }
+    }
+  ]
+}

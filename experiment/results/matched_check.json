@@ -1,0 +1,200 @@
+{
+  "n_toefl": 91,
+  "features": [
+    "mean_zipf",
+    "sd_zipf",
+    "frac_rare",
+    "frac_very_common",
+    "mattr",
+    "mean_word_len",
+    "sd_word_len",
+    "frac_long_words",
+    "mean_sent_len",
+    "sd_sent_len",
+    "commas_per_word",
+    "semicolons_colons_per_word",
+    "function_word_ratio",
+    "first_person_rate",
+    "contraction_rate"
+  ],
+  "feature_change": {
+    "mean_zipf": {
+      "mean_change_sd": -4.180230825536085,
+      "share_increase": 0.0,
+      "wilcoxon_p": 1.1920864122849158e-16
+    },
+    "sd_zipf": {
+      "mean_change_sd": 1.6676316407530407,
+      "share_increase": 0.945054945054945,
+      "wilcoxon_p": 2.5358384087869245e-15
+    },
+    "frac_rare": {
+      "mean_change_sd": 2.710044646422785,
+      "share_increase": 0.8791208791208791,
+      "wilcoxon_p": 1.146312875560449e-14
+    },
+    "frac_very_common": {
+      "mean_change_sd": -3.1439756914474755,
+      "share_increase": 0.0,
+      "wilcoxon_p": 1.1920051877341832e-16
+    },
+    "mattr": {
+      "mean_change_sd": 1.4717069118597597,
+      "share_increase": 0.9010989010989011,
+      "wilcoxon_p": 5.588415299527581e-15
+    },
+    "mean_word_len": {
+      "mean_change_sd": 2.9427939623977766,
+      "share_increase": 1.0,
+      "wilcoxon_p": 1.1920864122849158e-16
+    },
+    "sd_word_len": {
+      "mean_change_sd": 2.293287355128489,
+      "share_increase": 0.978021978021978,
+      "wilcoxon_p": 1.8959382959034625e-16
+    },
+    "frac_long_words": {
+      "mean_change_sd": 2.744509998985924,
+      "share_increase": 1.0,
+      "wilcoxon_p": 1.1920864122849158e-16
+    },
+    "mean_sent_len": {
+      "mean_change_sd": -0.3832407379196255,
+      "share_increase": 0.2857142857142857,
+      "wilcoxon_p": 3.53282033502343e-05
+    },
+    "sd_sent_len": {
+      "mean_change_sd": -0.675121578360159,
+      "share_increase": 0.17582417582417584,
+      "wilcoxon_p": 4.315669149394346e-11
+    },
+    "commas_per_word": {
+      "mean_change_sd": 0.8632130387966214,
+      "share_increase": 0.8681318681318682,
+      "wilcoxon_p": 1.1085092652908707e-12
+    },
+    "semicolons_colons_per_word": {
+      "mean_change_sd": 0.5033587388508628,
+      "share_increase": 0.13186813186813187,
+      "wilcoxon_p": 0.0022090203462313877
+    },
+    "function_word_ratio": {
+      "mean_change_sd": -1.8447623142514005,
+      "share_increase": 0.03296703296703297,
+      "wilcoxon_p": 3.2688187040241767e-15
+    },
+    "first_person_rate": {
+      "mean_change_sd": -0.021503348224442324,
+      "share_increase": 0.5494505494505495,
+      "wilcoxon_p": 0.9628668736396585
+    },
+    "contraction_rate": {
+      "mean_change_sd": -0.20573975774312475,
+      "share_increase": 0.2967032967032967,
+      "wilcoxon_p": 0.042183831456626006
+    }
+  },
+  "detectors": {
+    "prompt_matched_college": {
+      "n_human": 70,
+      "n_machine": 31,
+      "cv_auroc": 0.9774193548387098,
+      "auroc_toefl_vs_machine": 0.7653314427507976,
+      "mean_score_change_sd": 0.38617565191122183,
+      "boot_ci": [
+        -0.5999875737642076,
+        1.5304641516713682
+      ],
+      "share_boot_positive": 0.76,
+      "share_essays_score_up": 0.6483516483516484,
+      "wilcoxon_p": 0.0023996699597039974,
+      "flagged_before": 0.7472527472527473,
+      "flagged_after": 0.8241758241758241,
+      "top_contributions": {
+        "frac_long_words": 1.2833188998114058,
+        "mean_zipf": -1.1052096961365965,
+        "sd_word_len": 0.9199147087186746,
+        "frac_very_common": -0.7498776667985864
+      }
+    },
+    "prompt_matched_college_incl_rewrites": {
+      "n_human": 70,
+      "n_machine": 62,
+      "cv_auroc": 0.9679723502304147,
+      "auroc_toefl_vs_machine": 0.837823466855725,
+      "mean_score_change_sd": 1.8366906812974615,
+      "boot_ci": [
+        0.9714207508704344,
+        2.9282493595553127
+      ],
+      "share_boot_positive": 1.0,
+      "share_essays_score_up": 0.8901098901098901,
+      "wilcoxon_p": 8.396150472485836e-15,
+      "flagged_before": 0.6263736263736264,
+      "flagged_after": 0.9560439560439561,
+      "top_contributions": {
+        "frac_long_words": 1.3430088490254488,
+        "frac_very_common": -1.212231673699312,
+        "mean_word_len": 1.0138535862396563,
+        "sd_word_len": 0.8337629624490689
+      }
+    },
+    "prompt_matched_abstracts": {
+      "n_human": 145,
+      "n_machine": 145,
+      "cv_auroc": 0.9978596908442331,
+      "auroc_toefl_vs_machine": 0.9949981053429329,
+      "mean_score_change_sd": 1.351552086946704,
+      "boot_ci": [
+        0.783291017691389,
+        2.0327804882371723
+      ],
+      "share_boot_positive": 1.0,
+      "share_essays_score_up": 0.9340659340659341,
+      "wilcoxon_p": 1.4241660538906855e-14,
+      "flagged_before": 0.15384615384615385,
+      "flagged_after": 0.46153846153846156,
+      "top_contributions": {
+        "frac_long_words": 1.0191245254560581,
+        "frac_very_common": 0.5029683197747101,
+        "mattr": -0.3177122021484449,
+        "sd_word_len": 0.3045121055016068
+      }
+    },
+    "all_native_vs_all_gpt3": {
+      "n_human": 303,
+      "n_machine": 176,
+      "cv_auroc": 0.9901365136513651,
+      "auroc_toefl_vs_machine": 0.9519230769230769,
+      "mean_score_change_sd": 1.5911221911311408,
+      "boot_ci": [
+        1.28459816769102,
+        1.9987765501768877
+      ],
+      "share_boot_positive": 1.0,
+      "share_essays_score_up": 0.978021978021978,
+      "wilcoxon_p": 3.427552705034359e-16,
+      "flagged_before": 0.32967032967032966,
+      "flagged_after": 0.9120879120879121,
+      "top_contributions": {
+        "frac_long_words": 1.0814875405093547,
+        "sd_word_len": 0.632165234083578,
+        "frac_very_common": 0.3914355139731204,
+        "sd_sent_len": 0.37695899154304
+      }
+    }
+  },
+  "essay_level": {
+    "share_commercial_mean_down": 0.945054945054945,
+    "share_commercial_down_and_matched_up": 0.6043956043956044,
+    "share_each_commercial_down": {
+      "GPTZero": 0.6923076923076923,
+      "OriginalityAI": 0.945054945054945,
+      "HFOpenAI": 0.9230769230769231,
+      "Crossplag": 0.9340659340659341,
+      "Quil": 0.9010989010989011,
+      "Sapling": 0.945054945054945,
+      "ZeroGPT": 0.7032967032967034
+    }
+  }
+}

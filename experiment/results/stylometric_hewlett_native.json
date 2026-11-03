@@ -1,0 +1,189 @@
+{
+  "config": {
+    "liang_root": "ChatGPT-Detector-Bias",
+    "csv": null,
+    "native": "hewlett",
+    "freq_list": "FrequencyWords/content/2018/en/en_50k.txt",
+    "lm_model": null,
+    "rewriter": "published",
+    "rewrite_model": null,
+    "api_base": null,
+    "rounds": 1,
+    "target_fpr": 0.1,
+    "response_rate": 1.0,
+    "no_evasion": false,
+    "splits": 200,
+    "seed": 0,
+    "out": "results/stylometric_hewlett_native.json"
+  },
+  "features": [
+    "mean_zipf",
+    "sd_zipf",
+    "frac_rare",
+    "frac_very_common",
+    "mattr",
+    "mean_word_len",
+    "sd_word_len",
+    "frac_long_words",
+    "mean_sent_len",
+    "sd_sent_len",
+    "commas_per_word",
+    "semicolons_colons_per_word",
+    "function_word_ratio",
+    "first_person_rate",
+    "contraction_rate"
+  ],
+  "interval_note": "lo and hi are the 2.5th and 97.5th percentiles across random splits: split-variability intervals, not confidence intervals",
+  "corpus": {
+    "ai": 176,
+    "native": 88,
+    "nonnative": 91
+  },
+  "rounds": [
+    {
+      "round": 0,
+      "heldout": {
+        "auroc": {
+          "mean": 0.9879646464646464,
+          "lo": 0.9701641414141414,
+          "hi": 0.9984974747474747
+        },
+        "tpr": {
+          "mean": 0.9684090909090909,
+          "lo": 0.9090909090909091,
+          "hi": 1.0
+        },
+        "fpr": {
+          "mean": 0.12166666666666667,
+          "lo": 0.022222222222222223,
+          "hi": 0.26666666666666666
+        },
+        "fpr_native": {
+          "mean": 0.049090909090909095,
+          "lo": 0.0,
+          "hi": 0.18181818181818182
+        },
+        "fpr_nonnative": {
+          "mean": 0.19108695652173913,
+          "lo": 0.043478260869565216,
+          "hi": 0.391304347826087
+        },
+        "auroc_native": {
+          "mean": 0.9931921487603305,
+          "lo": 0.978254132231405,
+          "hi": 1.0
+        },
+        "auroc_nonnative": {
+          "mean": 0.9829644268774703,
+          "lo": 0.9584733201581028,
+          "hi": 0.9990118577075099
+        }
+      },
+      "drift_from_round0": {
+        "ai": 0.0,
+        "native": 0.0,
+        "nonnative": 0.0
+      },
+      "deployed_threshold": -1.163132896776708,
+      "deployed_pooled_human_fpr": 0.1005586592178771,
+      "deployed": {
+        "tpr": 0.9715909090909091,
+        "fpr": 0.1005586592178771,
+        "fpr_native": 0.03409090909090909,
+        "fpr_nonnative": 0.16483516483516483
+      },
+      "flagged": {
+        "ai": {
+          "flagged": 171,
+          "selected": 171,
+          "rewritten": 171
+        },
+        "native": {
+          "flagged": 3,
+          "selected": 3,
+          "rewritten": 0
+        },
+        "nonnative": {
+          "flagged": 15,
+          "selected": 15,
+          "rewritten": 15
+        }
+      },
+      "movement": {
+        "ai": {
+          "n": 171,
+          "mean_delta_projection": 0.6063478820842841,
+          "mean_distance": 2.429009842250446,
+          "mean_delta_score": 1.9459600524310834,
+          "share_still_flagged": 1.0
+        },
+        "nonnative": {
+          "n": 15,
+          "mean_delta_projection": 1.5257447930217,
+          "mean_distance": 4.251117843375131,
+          "mean_delta_score": 4.864900044533403,
+          "share_still_flagged": 1.0
+        }
+      }
+    },
+    {
+      "round": 1,
+      "heldout": {
+        "auroc": {
+          "mean": 0.9801994949494949,
+          "lo": 0.9459343434343433,
+          "hi": 1.0
+        },
+        "tpr": {
+          "mean": 0.9722727272727272,
+          "lo": 0.9318181818181818,
+          "hi": 1.0
+        },
+        "fpr": {
+          "mean": 0.1262222222222222,
+          "lo": 0.022222222222222223,
+          "hi": 0.26722222222222236
+        },
+        "fpr_native": {
+          "mean": 0.07704545454545454,
+          "lo": 0.0,
+          "hi": 0.22840909090909117
+        },
+        "fpr_nonnative": {
+          "mean": 0.17326086956521738,
+          "lo": 0.042391304347826106,
+          "hi": 0.391304347826087
+        },
+        "auroc_native": {
+          "mean": 0.9844318181818181,
+          "lo": 0.9482954545454546,
+          "hi": 1.0
+        },
+        "auroc_nonnative": {
+          "mean": 0.9761511857707511,
+          "lo": 0.9386857707509882,
+          "hi": 1.0
+        }
+      },
+      "drift_from_round0": {
+        "ai": 1.352360696077313,
+        "native": 0.0,
+        "nonnative": 0.5927097576659469
+      },
+      "previous_detector_frozen": {
+        "tpr": 0.9715909090909091,
+        "fpr": 0.1005586592178771,
+        "fpr_native": 0.03409090909090909,
+        "fpr_nonnative": 0.16483516483516483
+      },
+      "deployed_threshold": -1.2332642817596626,
+      "deployed_pooled_human_fpr": 0.1005586592178771,
+      "deployed": {
+        "tpr": 0.9715909090909091,
+        "fpr": 0.1005586592178771,
+        "fpr_native": 0.045454545454545456,
+        "fpr_nonnative": 0.15384615384615385
+      }
+    }
+  ]
+}

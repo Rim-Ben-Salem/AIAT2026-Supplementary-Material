@@ -1,0 +1,88 @@
+{
+  "all_native": {
+    "fold_human_score_mean": [
+      -4.767823173733941,
+      -4.340473916238047,
+      -4.505378329910504,
+      -4.238705971073884,
+      -4.629564354906882
+    ],
+    "fold_human_score_sd": [
+      2.4339276416832867,
+      2.840695159536601,
+      2.4343248215254794,
+      2.9951993545017648,
+      2.9237043724651155
+    ],
+    "pooled_threshold": -1.1942847547190198,
+    "fold_thresholds": [
+      -1.765828959358712,
+      -1.4632778223755687,
+      -1.6041632691707293,
+      -0.4746241638982922,
+      -1.15794738244223
+    ],
+    "flag_agreement": 0.9771929824561404,
+    "human_flags_changed": 10,
+    "n_human": 394,
+    "pooled": {
+      "fpr_native": 0.07590759075907591,
+      "fpr_nonnative": 0.18681318681318682,
+      "pooled_human_fpr": 0.10152284263959391,
+      "tpr": 0.9147727272727273,
+      "nonnative_flagged": 17,
+      "still_flagged_after_polishing": 16
+    },
+    "fold_specific": {
+      "fpr_native": 0.07260726072607261,
+      "fpr_nonnative": 0.1978021978021978,
+      "pooled_human_fpr": 0.10152284263959391,
+      "tpr": 0.9204545454545454,
+      "nonnative_flagged": 18,
+      "still_flagged_after_polishing": 17
+    }
+  },
+  "hewlett_native": {
+    "fold_human_score_mean": [
+      -5.54423056552107,
+      -4.003754600484029,
+      -3.9504462476230913,
+      -3.6869120975565823,
+      -3.9877063831282085
+    ],
+    "fold_human_score_sd": [
+      2.7129364912455607,
+      1.6186922404833963,
+      1.9588137820242288,
+      2.847319283570229,
+      2.4043822118418947
+    ],
+    "pooled_threshold": -1.163132896776708,
+    "fold_thresholds": [
+      -1.9443891498816435,
+      -2.444835052176846,
+      -1.5464507953761686,
+      -0.31424959502114513,
+      -0.8629560368778253
+    ],
+    "flag_agreement": 0.9746478873239437,
+    "human_flags_changed": 8,
+    "n_human": 179,
+    "pooled": {
+      "fpr_native": 0.03409090909090909,
+      "fpr_nonnative": 0.16483516483516483,
+      "pooled_human_fpr": 0.1005586592178771,
+      "tpr": 0.9715909090909091,
+      "nonnative_flagged": 15,
+      "still_flagged_after_polishing": 15
+    },
+    "fold_specific": {
+      "fpr_native": 0.022727272727272728,
+      "fpr_nonnative": 0.1978021978021978,
+      "pooled_human_fpr": 0.11173184357541899,
+      "tpr": 0.9659090909090909,
+      "nonnative_flagged": 18,
+      "still_flagged_after_polishing": 18
+    }
+  }
+}
