@@ -6,7 +6,7 @@ Supplementary material for *Who Bears the Burden of Detecting AI with AI? A Mode
 
 | File | Purpose |
 |---|---|
-| `arms_race_sim.py` | Population-level simulation of the detection loop (Section 5), including the response variants, deployment policies, audit options and evasion rules |
+| `arms_race_sim.py` | Population-level simulation of the detection loop (Section 5), including the response variants, deployment policies (recalibration, fixed threshold, FPR cap, fixed alert budget, withdrawal), audit options and evasion rules |
 | `anchors.py` | Derives per-detector anchors from `../experiment/results/published_detectors.json` and writes `anchors.json` (Table S5) |
 | `make_figures.py` | Produces Figures 2–5 and S1 and prints the values in Tables 3 and 4 |
 | `make_tables.py` | Prints the values in Tables 5, 7, 8 and 10, Tables S1–S6, the feedback-robustness results (Section S1.3) and all paired differences with 95% intervals |
@@ -23,6 +23,7 @@ Supplementary material for *Who Bears the Burden of Detecting AI with AI? A Mode
 | `prevalence.py` | Withdrawal under a misspecified or estimated prevalence; writes `prevalence.json`, 20 seeds (Corollary 4.5, Section S1.9, Table S7) |
 | `audit_evasion_checks.py` | Withdrawal with an independent audit sample compared with an audit that reuses the evaluation sample, and the effect of human adaptation under a constant evasion step; writes `audit_evasion_checks.json`, 20 seeds (Sections S1.11–S1.12, Tables S9–S10) |
 | `response_calibration_checks.py` | Threshold, saturating and partial-awareness response functions, and recalibration on small, unrepresentative or stale calibration samples, with default and anchored parameters; writes `response_calibration_checks.json`, 20 seeds (Table 8, Section 5.6, Sections S1.13–S1.14, Tables S11–S12) |
+| `policy_revision_runs.py` | FPR cap, fixed alert budget and withdrawal with a confidence-bound audit (Clopper–Pearson, 200/200 and 2,000/200 texts, per-round and simultaneous error levels), with default and anchored parameters; writes `policy_revision.json`, 20 seeds, and prints the values (Table 10; Section 5.6, paragraphs "Caps and alert budgets" and "Confidence-bound audits") |
 
 Every result file from `arms_race_sim.py` stores, for each configuration and metric, the mean and standard deviation across seeds for every round, and the per-seed values after the last round (`final_by_seed`), which `make_tables.py` uses for paired comparisons. Configurations run with the same seeds share their random draws, so differences are computed seed by seed.
 
@@ -43,6 +44,7 @@ python fixed_threshold_check.py   # about 6 minutes on 2 cores
 python prevalence.py --sim-dir .  # under a minute
 python audit_evasion_checks.py    # about 5 minutes
 python response_calibration_checks.py   # about 15 minutes
+python policy_revision_runs.py    # about 2 minutes
 python nonlinear_sim.py --sim-dir . --seeds 20   # about 3 hours on 2 cores
 ```
 
@@ -64,6 +66,10 @@ Evasion assumes every caught machine text is paraphrased once per round (η = δ
 ## Notes on the policies and options
 
 - **Fixed threshold.** `policy="fixed_threshold"` stores the round-0 cut-off on the logistic regression's decision function (its log-odds) and reuses that number after each retraining. This is a fixed cut-off on the model's own predicted probability, not on the equal-prior posterior that Proposition 4.4(2) assumes. `fixed_threshold_check.py` reproduces this policy exactly with `threshold="raw"` (checked at start-up) and compares it with a cut-off fixed on probabilities recalibrated each round by Platt scaling on balanced labelled data.
+- **FPR cap.** `policy="cap"` keeps the round-0 cut-off unless the threshold recalibrated to the target FPR is higher, so the threshold is raised only when the realised rate would exceed the cap and is never lowered below its round-0 value.
+- **Fixed alert budget.** `policy="budget"` sets the threshold each round so that the target rate of all submissions is flagged, on a calibration sample of human texts plus machine texts in the share `budget_prevalence` (default 0.1).
+- **Confidence-bound audit.** With `policy="withdraw"` and `withdraw_rule="cb"`, each round's audit draws `audit_nh` human and `audit_na` machine texts and computes exact Clopper–Pearson bounds, a lower bound on the TPR and an upper bound on the FPR, each at level `audit_delta / 2`. The FPR bound is 1 − (`audit_delta` / 2)^(1/`audit_nh`) when no human text is flagged. The detector is withdrawn once the ratio of the bounds falls below (1 − π̂)/π̂. `audit_delta = 0.05 / 60` gives a guarantee over all 60 rounds.
+- **Precision of a flag.** `ppv_true` records, each round, the precision of a flag at 10% prevalence computed from the evaluation sample at the deployed threshold, whether or not the detector has been withdrawn.
 - **Withdrawal audit.** With `policy="withdraw"`, the default `audit_source="independent"` audits the detector each round on a fresh labelled sample (`audit_n` texts per class, or the evaluation-sample size when `audit_n` is `None`) drawn from the current populations with its own random stream, so that the trajectory before withdrawal does not depend on the audit. `audit_source="evaluation"` reuses the evaluation sample instead; `audit_evasion_checks.py` compares the two.
 - **Evasion rule.** The default `evasion="tpr"` scales the evasion step with the true-positive rate. `evasion="constant"` holds it at `evasion_rate`, a constant TPR-equivalent rate.
 - **Response function.** The default `response_fn="linear"` makes each group's avoidance and homogenisation steps proportional to its pressure g = FPR_g / target FPR. `response_fn="threshold"` sets the pressure to zero while it is below `resp_threshold`, and `response_fn="saturating"` replaces it by `resp_cap * tanh(g / resp_cap)`.
