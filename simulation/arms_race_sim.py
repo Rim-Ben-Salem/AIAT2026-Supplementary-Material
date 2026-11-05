@@ -27,7 +27,7 @@ import json
 import numpy as np
 from sklearn.linear_model import LogisticRegression
 from scipy.optimize import brentq
-from scipy.stats import norm
+from scipy.stats import norm, beta as beta_dist
 from sklearn.metrics import roc_auc_score
 
 DEFAULTS = dict(q=1.0, alpha=0.5, beta=0.05, rho=0.02, kappa=0.01, eta=0.6,
@@ -60,9 +60,12 @@ DEFAULTS = dict(q=1.0, alpha=0.5, beta=0.05, rho=0.02, kappa=0.01, eta=0.6,
                 # recalibration sample (fixed-FPR policy)
                 cal_n=None,            # human texts in the calibration sample (None: n)
                 cal_p2=None,           # G2 share of the calibration sample (None: p_g2)
-                cal_stale=0)           # calibration sample drawn from the populations k rounds earlier
+                cal_stale=0,
+                budget_prevalence=0.1,  # fixed alert budget: assumed machine share of submissions
+                audit_nh=None, audit_na=None,  # confidence-bound audit: human / machine texts
+                audit_delta=0.05)      # confidence-bound audit: total error probability per round           # calibration sample drawn from the populations k rounds earlier
 KEYS = ["auroc", "tpr", "fpr", "fpr_g1", "fpr_g2", "drift_g1", "drift_g2",
-        "std_g1", "std_g2", "cum_ff_g1", "cum_ff_g2", "deployed"]
+        "std_g1", "std_g2", "cum_ff_g1", "cum_ff_g2", "deployed", "ppv_true"]
 
 
 def _unit(v):
@@ -154,6 +157,17 @@ def run(seed=0, **overrides):
             c1 = m1c + s1c * rng.standard_normal((kc - kc2, d))
             c2 = m2c + s2c * rng.standard_normal((kc2, d))
         thr = np.quantile(clf.decision_function(np.vstack([c1, c2])), 1 - fpr0)
+        if p["policy"] == "cap":
+            # FPR cap: keep the round-0 cut-off unless it would exceed the cap
+            if thr_fixed is None:
+                thr_fixed = thr
+            thr = max(thr, thr_fixed)
+        if p["policy"] == "budget":
+            # fixed alert budget: flag target_fpr of all submissions at an
+            # assumed machine share budget_prevalence
+            pb = p["budget_prevalence"]
+            ca = machine(int(round(n * pb / (1 - pb))))
+            thr = np.quantile(clf.decision_function(np.vstack([c1, c2, ca])), 1 - fpr0)
         if p["policy"] == "fixed_threshold":
             # the detector's probability cut-off is set once, at round 0, and kept
             if thr_fixed is None:
@@ -205,19 +219,35 @@ def run(seed=0, **overrides):
                 a_tpr, a_fpr = (s_a[ia] > thr).mean(), (s_h[ih] > thr).mean()
                 a_auc = roc_auc_score(np.r_[np.zeros(len(ih)), np.ones(len(ia))],
                                       np.r_[s_h[ih], s_a[ia]])
-            if p["withdraw_rule"] == "auroc":
+            if p["withdraw_rule"] == "cb":
+                # exact Clopper-Pearson bounds, error split equally between
+                # the TPR lower bound and the FPR upper bound
+                kh, ka = p["audit_nh"], p["audit_na"]
+                kh2 = int(kh * p2)
+                ah = np.vstack([mu1 + s1 * rng_audit.standard_normal((kh - kh2, d)),
+                                mu2 + s2 * rng_audit.standard_normal((kh2, d))])
+                aa = muA + sA * rng_audit.standard_normal((ka, d))
+                xh = int((clf.decision_function(ah) > thr).sum())
+                xa = int((clf.decision_function(aa) > thr).sum())
+                dl = p["audit_delta"] / 2
+                tl = 0.0 if xa == 0 else beta_dist.ppf(dl, xa, ka - xa + 1)
+                fu = 1.0 if xh == kh else beta_dist.ppf(1 - dl, xh + 1, kh - xh)
+                pi = schedule(p["withdraw_prevalence"], t)
+                withdrawn = tl / fu < (1 - pi) / pi
+            elif p["withdraw_rule"] == "auroc":
                 withdrawn = a_auc < p["withdraw_auroc"]
             else:
                 # a flag is more likely false than true at the assumed prevalence
                 pi = schedule(p["withdraw_prevalence"], t)
                 ppv = pi * a_tpr / (pi * a_tpr + (1 - pi) * a_fpr) if a_tpr + a_fpr > 0 else 0.0
                 withdrawn = ppv < 0.5
+        ppv_true = 0.1 * tpr / (0.1 * tpr + 0.9 * fpr) if tpr + fpr > 0 else 0.0
         if withdrawn:
             tpr = fpr = f1 = f2 = 0.0
         cum1 += f1; cum2 += f2
 
         vals = [auroc, tpr, fpr, f1, f2, np.linalg.norm(mu1 - mu1_0),
-                np.linalg.norm(mu2 - mu2_0), s1, s2, cum1, cum2, 0.0 if withdrawn else 1.0]
+                np.linalg.norm(mu2 - mu2_0), s1, s2, cum1, cum2, 0.0 if withdrawn else 1.0, ppv_true]
         for k, v in zip(KEYS, vals):
             hist[k].append(float(v))
 
