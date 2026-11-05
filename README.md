@@ -7,7 +7,7 @@ Code, stored results and figures for *Who Bears the Burden of Detecting AI with 
 | Folder | What it contains | Paper |
 |---|---|---|
 | `experiment/` | Real-text analyses on the public corpus of Liang et al. (2023): commercial-detector scores, the one-round stylometric loop, prompt-matched detectors, the leave-corpus-out evaluation and the cross-fitting check | Section 6, Tables 11–12; Supplement S2 |
-| `simulation/` | Population-level simulation of the detection loop: main runs, ablations, sensitivity analyses, literature-anchored parameters, response variants, nonlinear detector, deployment policies, fixed-threshold calibration check, prevalence analysis, audit-sample comparison, constant evasion step, alternative response functions and imperfect recalibration | Sections 4–5, Figures 2–5, Tables 3–10; Supplement S1 |
+| `simulation/` | Population-level simulation of the detection loop: main runs, ablations, sensitivity analyses, literature-anchored parameters, response variants, nonlinear detector, deployment policies (including an FPR cap, a fixed alert budget and confidence-bound audits), fixed-threshold calibration check, prevalence analysis, audit-sample comparison, constant evasion step, alternative response functions and imperfect recalibration | Sections 4–5, Figures 2–5, Tables 3–10; Supplement S1 |
 | `figures/` | The figure files used in the paper, as written by `simulation/make_figures.py` | Figures 2–5 and S1 |
 | `checksums.sha256` | SHA-256 hashes of every stored result file | |
 
@@ -53,6 +53,7 @@ Approximate runtimes on a 2-core CPU:
 | `simulation/prevalence.py` | under 1 minute |
 | `simulation/audit_evasion_checks.py` | about 5 minutes |
 | `simulation/response_calibration_checks.py` | about 15 minutes |
+| `simulation/policy_revision_runs.py` | about 2 minutes |
 | `simulation/nonlinear_sim.py` (20 seeds) | about 3 hours |
 | Figures and table values | under 1 minute |
 

@@ -43,6 +43,7 @@ python fixed_threshold_check.py
 python prevalence.py --sim-dir . --out prevalence.json
 python audit_evasion_checks.py --seeds 20 --out audit_evasion_checks.json
 python response_calibration_checks.py --seeds 20 --out response_calibration_checks.json
+python policy_revision_runs.py --seeds 20 --out policy_revision.json
 if [ "$QUICK" -eq 0 ]; then
   python nonlinear_sim.py --sim-dir . --seeds 20 --out nonlinear.json
 fi
