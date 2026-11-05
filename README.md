@@ -1,17 +1,18 @@
 # Supplementary material
 
-Code, stored results and figures for *Who Bears the Burden of Detecting AI with AI? A Model of Collateral Performative Prediction in the Detection Arms Race*.
+Code, stored results, figures and supplementary material for *Who Bears the Burden of Detecting AI with AI? A Model of Collateral Performative Prediction in the Detection Arms Race*.
 
 ## Contents
 
-| Folder | What it contains | Paper |
+| Folder or file | What it contains | Paper |
 |---|---|---|
+| `supplementary_material.pdf` | Supplementary material: additional simulation results and robustness checks (S1), real-text protocol and results (S2), and a reproducibility map linking each figure and table to its script, configuration and result file (S3) | Supplement S1–S3 |
 | `experiment/` | Real-text analyses on the public corpus of Liang et al. (2023): commercial-detector scores, the one-round stylometric loop, prompt-matched detectors, the leave-corpus-out evaluation and the cross-fitting check | Section 6, Tables 11–12; Supplement S2 |
 | `simulation/` | Population-level simulation of the detection loop: main runs, ablations, sensitivity analyses, literature-anchored parameters, response variants, nonlinear detector, deployment policies (including an FPR cap, a fixed alert budget and confidence-bound audits), fixed-threshold calibration check, prevalence analysis, audit-sample comparison, constant evasion step, alternative response functions and imperfect recalibration | Sections 4–5, Figures 2–5, Tables 3–10; Supplement S1 |
 | `figures/` | The figure files used in the paper, as written by `simulation/make_figures.py` | Figures 2–5 and S1 |
 | `checksums.sha256` | SHA-256 hashes of every stored result file | |
 
-Table and section numbers refer to the main paper; numbers with an "S" prefix refer to the supplementary material. Each folder has its own README. It lists every script and output file and the table, figure or section that each one supports.
+Table and section numbers refer to the main paper; numbers with an "S" prefix refer to `supplementary_material.pdf`. Each folder has its own README. It lists every script and output file and the table, figure or section that each one supports.
 
 ## Requirements
 
